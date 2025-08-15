@@ -13,7 +13,7 @@ Before running this application, make sure you have the following installed:
 
 - **Node.js** (v14 or higher)
 - **npm** (comes with Node.js)
-- **MongoDB** (optional - app will work without it)
+- **MongoDB Compass** (optional - app will work without it)
 
 ## 🚀 Installation & Setup
 
