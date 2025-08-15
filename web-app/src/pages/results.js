@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import logo from '../images/logo.png';
 
 export default function ResultsPage() {
   const location = useLocation()
@@ -35,11 +36,13 @@ export default function ResultsPage() {
       <div className="page-content">
         <div className="results-card">
           <div className="results-header">
+            <img src={logo} alt="Logo" className="results-logo" />
             <h1 className="results-title">Final Results</h1>
-            <div className="score-display">
-              <div className="score-number">{score}</div>
-              <div className="score-label">Your Score</div>
-            </div>
+          </div>
+          
+          <div className="score-display">
+            <div className="score-number">{score}</div>
+            <div className="score-label">Your Score</div>
           </div>
           
           <div className="questions-list">

@@ -24,7 +24,6 @@ export default function QuizPage() {
       const response = await fetch('http://localhost:5000/api/questions');
       const data = await response.json();
       
-      // data is already the questions array, no need for data[0].results
       const questionsArray = data;
       
       // ---------------------------randomize and take first 10 questions---------------------------

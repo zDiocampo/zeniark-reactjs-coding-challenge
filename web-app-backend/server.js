@@ -14,8 +14,8 @@ app.use(express.json());
 mongoose.connect('mongodb://127.0.0.1:27017/zeniark_quiz', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
-  socketTimeoutMS: 45000, // Close sockets after 45s of inactivity
+  serverSelectionTimeoutMS: 5000,
+  socketTimeoutMS: 45000,
 });
 
 const db = mongoose.connection;
@@ -24,16 +24,16 @@ db.once('open', () => {
   console.log('Connected to MongoDB successfully!');
 });
 
-// Import routes
+// ----------------import routes----------------
 const questionRoutes = require('./routes/questions');
 
-// Use routes
+// ----------------use routes----------------
 app.use('/api/questions', questionRoutes);
 
-// Health check endpoint
-app.get('/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Server is running' });
-});
+// ----------------server status checking endpoint----------------
+// app.get('/health', (req, res) => {
+//   res.json({ status: 'OK', message: 'Server is running' });
+// });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Question = require('../models/Question');
 
-// Get all questions from MongoDB
+// ---------------------------get all questions from MongoDB---------------------------
 router.get('/', async (req, res) => {
   try {
     const questions = await Question.find({});

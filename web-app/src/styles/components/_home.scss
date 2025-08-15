@@ -1,29 +1,7 @@
+// ========================================
+// HOME PAGE STYLES (home.js)
+// ========================================
 .page-home {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  background: url('../images/bg.png') no-repeat center center;
-  background-size: cover;
-  min-height: 700px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 100%;
-    background: radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
-    opacity: 0.6;
-    pointer-events: none;
-  }
 
   .page-content {
     flex: 1;
@@ -34,6 +12,7 @@
     z-index: 5;
   }
 
+  // Welcome card - main white container
   .welcome-card {
     background: #fff;
     border-radius: 16px;
@@ -52,6 +31,7 @@
     align-items: center;
   }
 
+  // Brand section - logo and company name
   .brand-section {
     margin-bottom: 1.5rem;
     
@@ -66,6 +46,7 @@
     }
   }
 
+  // Welcome message text
   .welcome-message {
     font-size: clamp(1.1rem, 3vw, 1.5rem);
     font-weight: 600;
@@ -74,6 +55,7 @@
     font-family: 'Poppins', sans-serif;
   }
 
+  // Instructions text below welcome message
   .instructions {
     font-size: clamp(0.8rem, 2.5vw, 0.9rem);
     color: #374151;
@@ -82,6 +64,7 @@
     font-family: 'Poppins', sans-serif;
   }
 
+  // Main challenge button
   .challenge-btn {
     background: #0067a4;
     color: #fff;
@@ -101,6 +84,7 @@
     font-family: 'Poppins', sans-serif;
   }
 
+  // Start link below challenge button
   .start-link {
     color: #0067a4;
     text-decoration: underline;
