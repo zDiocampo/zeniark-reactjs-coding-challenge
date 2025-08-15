@@ -1,0 +1,36 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin card-style {
+  background: $white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  padding: $spacing-xl;
+}
+
+@mixin button-base {
+  border: none;
+  border-radius: $border-radius-md;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: $font-family;
+}
+
+@mixin responsive-text($min-size, $max-size) {
+  font-size: clamp($min-size, 3vw, $max-size);
+}
+
+@mixin background-image($image-path) {
+  background: url($image-path) no-repeat center center;
+  background-size: cover;
+}

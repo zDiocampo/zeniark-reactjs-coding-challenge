@@ -1,63 +1,203 @@
-# Zeniark ReactJS Coding Challenge
-
-## Overview
-
-Your challenge is to create a simple, 10 question, true or false, trivia app in the technology you are familiar with. While the problem you are working on is simple, you should treat this like a real world application. This is a chance to show off your abilities and impress.
-
-**What we are looking for through this challenge:**
-
-- Functionality
-- Code Format
-- Project Structure
-- Scalability
-- Maintainability
-- Use of industry best practices
-
-## Goals
-
-Implement the screens based on the wireframes below using advanced techniques and industry best practices for your platform. Note that the wireframes may not be complete, so use your best judgment for UI/UX implementation. **Do not use a boilerplate like React Boilerplate for this challenge.** We want to see how you structure your project and what tooling you use from scratch. Create react app is fine to use. Using NextJS is a PLUS! 
-
-## Steps
-
-#### 1. Fork this repo and use web-app folder as code boilerplate to start or you can create a fresh react-app.
-#### 2. Data: Feel free to do whatever you prefer in pulling data.
-Do either of the ff:
-- You can check file under `mock-data/questions.json` and do API data mocking. 
-- Or you can have the data under `mock-data/questions.json` and directly code/put it to state/local state.
-- Or you can setup nodejs server and do API request (PLUS Points!)
-
-#### 3. UI requirement:
-We provide the design for the trivia app. You can check the figma file [here](https://www.figma.com/file/6r4GIfxp3s9VXPq95KK9Gf/Zeniark-Coding-Test?node-id=0%3A1). You don't need to follow exactly the same if you do not have enough time. We want to see your general HTML/CSS skills and how you behavior when converting a design into a real product. `(Logo and background image are located in web-app/src/images)`
-
-### Intro / Home Screen:
-
-![The Intro screen for the app](screenshots/intro-screen.png "The Intro screen for the app")
-
-- Static Text
-- LET'S START button navigates to the Quiz screen and starts the Quiz
-
-### Quiz Screen:
-
-![The Quiz screen for the app](screenshots/question-screen.png "The Quiz screen for the app")
-
-- The headline is from question category
-- The card element contains the current question
-- The next question should appear after the current question is answered True or False
-- After all questions have been answered, navigate to the Results Screen
-
-### Results screen:
-
-![The Results screen for the app](screenshots/results-screen.png "The Results screen for the app")
-
-- The Score shows correct and total
-- Displays a list of the questions and whether the answer was correct or not
-- PLAY AGAIN starts over with new set of random questions and navigates to the Home Screen
-
-## Submission
-
-Please use git for version control and platforms like Github to host the repository. Once you have finished your challenge, send us the repository url. It would be even better if you can have a documentation for how to run your code in our environment.
-
-HAPPY CODING!
 
 
-~ Chrisl.Zeniark
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js, SCSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Styling**: SCSS with modern CSS features
+
+## 📋 Prerequisites
+
+Before running this application, make sure you have the following installed:
+
+- **Node.js** (v14 or higher)
+- **npm** (comes with Node.js)
+- **MongoDB** (optional - app will work without it)
+
+## 🚀 Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-repository-url>
+cd zeniark-reactjs-coding-challenge
+```
+
+### 2. Install Backend Dependencies
+
+```bash
+cd web-app-backend
+npm install
+```
+
+### 3. Install Frontend Dependencies
+
+```bash
+cd ../web-app
+npm install
+```
+
+## 🗄️ Database Setup
+
+### Option A: With MongoDB (Recommended for Production)
+
+1. **Install MongoDB**:
+   - Download from [MongoDB Official Website](https://www.mongodb.com/try/download/community)
+   - Install as a Windows service during installation
+
+2. **Start MongoDB Service**:
+   ```bash
+   net start MongoDB
+   ```
+
+3. **Seed the Database**:
+   ```bash
+   cd web-app-backend
+   npm run seed
+   ```
+
+### Option B: Without MongoDB (Fallback Mode)
+
+The application includes a built-in fallback system that automatically provides questions when MongoDB is unavailable. **No additional setup required** - the app will work out of the box!
+
+## 🚀 Running the Application
+
+### 1. Start the Backend Server
+
+```bash
+cd web-app-backend
+npm start
+```
+
+The backend will start on `http://localhost:5000`
+
+**Note**: If MongoDB is not running, the backend will automatically use local fallback data and log:
+```
+MongoDB connection failed, using local data: [error message]
+Serving 20 questions from local data (MongoDB connection failed)
+```
+
+### 2. Start the Frontend Application
+
+```bash
+cd web-app
+npm start
+```
+
+The frontend will start on `http://localhost:3000`
+
+## 🔄 How the Fallback System Works
+
+The application intelligently handles data sources:
+
+1. **Primary Source**: MongoDB database
+2. **Fallback 1**: If MongoDB is empty, uses local data
+3. **Fallback 2**: If MongoDB connection fails, automatically switches to local data
+
+### Fallback Scenarios:
+
+- **MongoDB Running + Has Data**: Serves questions from database
+- **MongoDB Running + Empty**: Serves questions from local fallback data
+- **MongoDB Not Running**: Automatically serves questions from local fallback data
+- **Network Issues**: Gracefully falls back to local data
+
+### Benefits:
+
+- **Zero Configuration**: Works immediately after installation
+- **Development Friendly**: No need to set up MongoDB for development
+- **Production Ready**: Automatically uses MongoDB when available
+- **Fault Tolerant**: Continues working even if database issues occur
+
+## 📁 Project Structure
+
+```
+zeniark-reactjs-coding-challenge/
+├── web-app/                    # React frontend
+│   ├── src/
+│   │   ├── components/         # Reusable UI components
+│   │   ├── pages/             # Main application pages
+│   │   ├── hooks/             # Custom React hooks
+│   │   └── styles/            # SCSS styling
+│   └── package.json
+├── web-app-backend/            # Node.js backend
+│   ├── config/                # Database configuration
+│   ├── models/                # MongoDB schemas
+│   ├── routes/                # API endpoints
+│   ├── scripts/               # Database seeding
+│   ├── data/                  # Fallback questions data
+│   └── package.json
+└── README.md
+```
+
+## 🎯 Available Scripts
+
+### Backend Scripts
+
+```bash
+cd web-app-backend
+
+npm start          # Start production server
+npm run dev        # Start development server with nodemon
+npm run seed       # Seed database with questions
+```
+
+### Frontend Scripts
+
+```bash
+cd web-app
+
+npm start          # Start development server
+npm run build      # Build for production
+npm test           # Run tests
+```
+
+## 🌐 API Endpoints
+
+- **GET** `/api/questions` - Retrieve all quiz questions
+  - Returns questions from MongoDB if available
+  - Automatically falls back to local data if MongoDB unavailable
+
+## 📄 Configuration
+
+### Environment Variables
+
+Create a `.env` file in `web-app-backend/` (optional):
+
+```env
+MONGODB_URI=mongodb://localhost:27017/zeniark_quiz
+PORT=5000
+```
+
+### Database Connection
+
+The app automatically tries to connect to:
+- **Primary**: `mongodb://localhost:27017/zeniark_quiz`
+- **Fallback**: Local questions data (no configuration needed)
+
+## 🚨 Troubleshooting
+
+### Common Issues
+
+1. **"MongoDB connection failed" message**:
+   - This is normal when MongoDB isn't running
+   - The app will automatically use fallback data
+   - No action required
+
+2. **Questions not loading**:
+   - Check if backend is running on port 5000
+   - Check browser console for errors
+   - Verify CORS settings if accessing from different domain
+
+3. **Port already in use**:
+   - Change port in backend configuration
+   - Or kill process using the port
+
+### Development Tips
+
+- **No MongoDB needed**: The fallback system ensures the app works immediately
+- **Hot Reload**: Frontend automatically refreshes on code changes
+- **API Testing**: Test endpoints using Postman or browser dev tools
+
+
+

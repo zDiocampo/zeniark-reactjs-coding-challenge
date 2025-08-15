@@ -1,0 +1,117 @@
+.page-home {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background: url('../images/bg.png') no-repeat center center;
+  background-size: cover;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background: radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .page-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    z-index: 5;
+  }
+
+  .welcome-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    min-height: 400px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .brand-section {
+    margin-bottom: 1.5rem;
+    
+    .logo {
+      width: 100%;
+      max-width: 344px;
+      height: auto;
+      max-height: 91px;
+      margin: 0 auto 1rem;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  .welcome-message {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .instructions {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    color: #374151;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .challenge-btn {
+    background: #0067a4;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .start-link {
+    color: #0067a4;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    
+    &:hover {
+      color: #1e3a8a;
+    }
+  }
+}
