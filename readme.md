@@ -40,7 +40,7 @@ npm install
 
 ## 🗄️ Database Setup
 
-### Option A: With MongoDB (Recommended for Production)
+### Option A: With MongoDB (Optional)
 
 1. **Install MongoDB**:
    - Download from [MongoDB Official Website](https://www.mongodb.com/try/download/community)
